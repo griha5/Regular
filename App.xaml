@@ -1,0 +1,33 @@
+﻿<Application x:Class="Regular.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Regular"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="BasicStyle">
+            <Setter Property="Control.FontSize" Value="15"/>
+            <Setter Property="Control.FontFamily" Value="Consolas"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="5,5,5,5"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="Background" Value="{DynamicResource BackBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource ForwardBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <LinearGradientBrush x:Key="ForwardBrush" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFF7F7F7"/>
+            <GradientStop Color="#FFE6E6EA" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="BackBrush" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFE6E6EA"/>
+            <GradientStop Color="#FFF7F7F7" Offset="1"/>
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type ToolTip}">
+            <Setter Property="Template" Value="{x:Null}" />
+        </Style>
+    </Application.Resources>
+</Application>
